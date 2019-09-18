@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trivia Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/sketchy/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+</head>
+
+<body>
+
+    <div id="game"></div>
+
+    <div>
+
+        <h1>YEEZUS Trivia</h1>
+        <h2 id="directions">Answer the questions to see how well you know Kanye!</h2>
+        <div id="start">
+            <button class="btn btn-lg btn-primary">Start</button>
+        </div>
+        <div id="main">
+            <div id="time-left"></div>
+            <div id="show-time"></div>
+
+            <form>
+                <div class="form-group">
+                    <label for="Q1">What year did Mr. West release College Dropout?</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="Q1" value="option1">
+                        <label class="form-check-label" for="Q1">2011</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="Q1" value="option2">
+                        <label class="form-check-label" for="Q1">2003</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="Q1" value="option3">
+                        <label class="form-check-label" for="Q1">2007</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="Q1" value="option4">
+                        <label class="form-check-label" for="Q1">2004</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="Q2">What was Yeezy's first single to appear on the Billboard Hot 100 chart?</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="Q2" value="option1">
+                        <label class="form-check-label" for="Q2">Runaway</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="Q2" value="option2">
+                        <label class="form-check-label" for="Q2">Through the Wire</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="Q2" value="option3">
+                        <label class="form-check-label" for="Q2">Jesus Walks</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="Q2" value="option4">
+                        <label class="form-check-label" for="Q2">Slow Jamz</label>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="Q3">At what age did Yandhi recieve his first sampler?</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="Q3" value="option1">
+                        <label class="form-check-label" for="Q3">15</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="Q3" value="option2">
+                        <label class="form-check-label" for="Q3">21</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="Q3" value="option3">
+                        <label class="form-check-label" for="Q3">12</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="Q3" value="option4">
+                        <label class="form-check-label" for="Q3">19</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="Q4">In what foreign country & city did Ye recieve part of his grade school
+                                education?</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="Q4" value="option1">
+                        <label class="form-check-label" for="Q4">Munich, Germany</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="Q4" value="option2">
+                        <label class="form-check-label" for="Q4">Tokyo, Japan</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="Q4" value="option3">
+                        <label class="form-check-label" for="Q4">Nanjing, China</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="Q4" value="option4">
+                        <label class="form-check-label" for="Q4">Mombasa, Kenya</label>
+                    </div>
+                </div>
+
+                <div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+
+
+            </form>
+        </div>
+        <div id="result">
+
+            <p id="unanswered"></p>
+            <p id="correct"></p>
+            <p id="incorrect"></p>
+            <!-- <p id="turns"></p> -->
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+
+</body>
+
+</html>
+
+
+<!-- <div class="form-group">
+                    <label for="Q1">Q1</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Q1" value="true">
+                        <label class="form-check-label" for="Q1">
+                          True
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Q1" value="false">
+                        <label class="form-check-label" for="Q1">
+                          False
+                        </label>
+                    </div>
+                
+                </div>
+                <div class="form-group">
+                    <label for="Q2">Q2</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Q2" value="true">
+                        <label class="form-check-label" for="Q2">
+                              True
+                            </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Q2" value="false">
+                        <label class="form-check-label" for="Q2">
+                              False
+                            </label>
+                    </div> -->
